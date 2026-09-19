@@ -33,7 +33,7 @@ llama-doctor check --lang ja ...
 版本号同时记录这一版实际验证过的 llama.cpp 基线：
 
 ```text
-llama-doctor  0.3.1.10731
+llama-doctor  0.3.2.10731
                 ^     ^
                 |     llama.cpp build 编号
                 llama.cpp 版本基线
@@ -221,7 +221,7 @@ LLAMA_DOCTOR_CACHE_DIR
 python -m pytest -q
 ```
 
-当前三语版本共有 **89 个测试**。除了原有 parser、validator、cache 等测试，还新增了：
+当前三语版本共有 **91 个测试**。除了原有 parser、validator、cache 等测试，还新增了：
 
 - 语言代码归一化
 - 中文 / 日文诊断文本

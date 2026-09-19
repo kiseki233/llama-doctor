@@ -27,7 +27,7 @@ English remains the CLI default for backward compatibility. Diagnostic `code` va
 The version number names the llama.cpp release this build was verified against:
 
 ```text
-llama-doctor  0.3.1.10731
+llama-doctor  0.3.2.10731
                 ^     ^
                 |     llama.cpp build number
                 llama.cpp version baseline
@@ -191,7 +191,7 @@ Several legacy mmap/mlock flags can collapse into the modern `--load-mode` optio
 python -m pytest -q
 ```
 
-The multilingual release contains **89 tests**. It includes the existing parser/validator/cache coverage plus language normalization, translated diagnostic output, localized JSON, and Chinese/Japanese CLI checks.
+The multilingual release contains **91 tests**. It includes the existing parser/validator/cache coverage plus language normalization, translated diagnostic output, localized JSON, and Chinese/Japanese CLI checks.
 
 ## Windows executables
 

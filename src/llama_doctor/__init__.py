@@ -9,7 +9,7 @@ whichever executable you point it at -- but pinning the number makes the
 verified baseline visible at a glance.
 """
 
-__version__ = "0.3.1.10731"
+__version__ = "0.3.2.10731"
 
 # The build used as ground truth for this release: every flag it reports was
 # submitted to this binary and the verdicts compared.

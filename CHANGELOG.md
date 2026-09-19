@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.3.2.10731
+
+Found by exercising the 0.3.1 localization on Windows with PySide6 installed,
+which the environment it was written in did not have.
+
+- Fixed two Japanese strings that made different things read identically. 解析
+  ("parse") was used for both the Probe and the Analyze button, leaving the GUI
+  with two buttons that read the same, and a failed probe and a failed command
+  parse both reported 解析に失敗, so the message could not say which had
+  happened. Probe is now プローブ.
+- Added a check that no two keys describing different things collapse onto the
+  same text in any language; the intended synonyms are listed explicitly, so a
+  new collision has to be looked at rather than slipping past a heuristic.
+- `*.egg-info/` is ignored. An editable install left build metadata in the tree.
+- Automated coverage is now 91 tests.
+- The verified llama.cpp baseline is unchanged: `0.3.0-dev`, build `10731`.
+
+### Verified in this release
+
+- The GUI language selector: switching relabels the open window, diagnostics
+  re-render in the new language while their `code` values stay fixed, and the
+  choice survives a restart via `QSettings`.
+- CLI output in all three languages against a real `llama-server`
+  (`0.3.0-dev`, build 10731) rather than only the test double.
+
 ## 0.3.1.10731
 
 - Added runtime English / Simplified Chinese / Japanese localization.
@@ -9,14 +34,7 @@
 - Localized CLI tables, status text, diagnostic presentation, version/probe output, and common probe/parse errors.
 - JSON diagnostics can be localized while stable diagnostic `code` values remain language-independent.
 - Added English, Simplified Chinese, and Japanese README files.
-- Added multilingual regression tests.
-- Fixed two Japanese strings that made different things read identically: 解析
-  ("parse") was used for both the Probe and the Analyze button, and a failed
-  probe and a failed command parse both reported 解析に失敗. Probe is now
-  プローブ, so the two buttons and the two failure causes can be told apart.
-- Added a check that no two keys describing different things collapse onto the
-  same text in any language, with the intended synonyms listed explicitly.
-- Automated coverage is now 91 tests.
+- Added multilingual regression tests; automated coverage is now 89 tests.
 - The verified llama.cpp baseline is unchanged: `0.3.0-dev`, build `10731`.
 
 ## 0.3.0.10731

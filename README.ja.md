@@ -33,7 +33,7 @@ llama-doctor check --lang ja ...
 バージョン番号には、実際に検証した llama.cpp の基準 build が含まれます。
 
 ```text
-llama-doctor  0.3.1.10731
+llama-doctor  0.3.2.10731
                 ^     ^
                 |     llama.cpp build 番号
                 llama.cpp バージョン基準
@@ -221,7 +221,7 @@ migration rule が safe とされていても、コマンド全体として結�
 python -m pytest -q
 ```
 
-現在の多言語版は **89 テスト**です。既存の parser / validator / cache テストに加え、次を追加しています。
+現在の多言語版は **91 テスト**です。既存の parser / validator / cache テストに加え、次を追加しています。
 
 - 言語コード正規化
 - 中国語 / 日本語の診断表示

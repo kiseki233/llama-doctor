@@ -2,7 +2,7 @@
 
 ## Current version
 
-`0.3.1.10731` — the version tracks the llama.cpp release used as ground truth
+`0.3.2.10731` — the version tracks the llama.cpp release used as ground truth
 (`0.3.0-dev`, build 10731). Other builds are supported; the schema is read from
 the selected executable.
 
@@ -48,7 +48,7 @@ the selected executable.
 ## Verified
 
 - Core Python modules compile successfully.
-- 89 automated tests pass.
+- 91 automated tests pass.
 - Help parser regression tests use llama.cpp-style alias spacing and multiline enum descriptions.
 - Cache hit and corrupt-cache fallback are tested without depending on a real llama.cpp binary.
 - CLI has been exercised end-to-end against a fake llama-server executable that implements `--version` and `--help`.
@@ -67,9 +67,20 @@ the selected executable.
 - A PyInstaller console executable was built and run. The packaged
   `rules/*.json` resolve correctly from the frozen bundle.
 
+## Verified for the localization (0.3.2.10731)
+
+- The GUI language selector was exercised on Windows with PySide6 6.11.2:
+  switching relabels the open window, diagnostics re-render in the selected
+  language while their `code` values stay fixed, and the choice is written to
+  `QSettings` and read back on the next start.
+- CLI output in English, Simplified Chinese and Japanese was checked against a
+  real `llama-server`, not only the test double. All three report the same
+  diagnostic codes and the same error and warning counts.
+- The repository was cloned fresh from its remote and the whole suite run from
+  that clone.
+
 ## Not verified
 
-- The multilingual PySide6 GUI source compiles, but this build environment does not have PySide6 installed, so the new language switcher was not interactively exercised here. The pre-localization GUI was previously verified on Windows.
 - The GUI `.exe` produced by `scripts/build_windows.ps1` has not been built;
   only the console build was exercised.
 - Only one llama.cpp build has been used as ground truth. Help-text parsing may
