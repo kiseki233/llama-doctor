@@ -1,0 +1,36 @@
+{
+  "rules": [
+    {
+      "id": "deprecated-no-mmap",
+      "old_flag": "--no-mmap",
+      "replacement": "--load-mode none",
+      "safe": true,
+      "note": "Deprecated mmap control syntax; current llama.cpp maps it to load mode 'none'.",
+      "source": "https://github.com/ggml-org/llama.cpp/discussions/26469"
+    },
+    {
+      "id": "deprecated-mmap",
+      "old_flag": "--mmap",
+      "replacement": "--load-mode mmap",
+      "safe": true,
+      "note": "Deprecated mmap syntax; use the unified load-mode option.",
+      "source": "https://github.com/ggml-org/llama.cpp/issues/9289"
+    },
+    {
+      "id": "deprecated-mlock",
+      "old_flag": "--mlock",
+      "replacement": "--load-mode mlock",
+      "safe": true,
+      "note": "Deprecated mlock syntax; use the unified load-mode option.",
+      "source": "https://github.com/ggml-org/llama.cpp/issues/9289"
+    },
+    {
+      "id": "deprecated-direct-io",
+      "old_flag": "--direct-io",
+      "replacement": "--load-mode dio",
+      "safe": true,
+      "note": "Deprecated DirectIO syntax; use the unified load-mode option.",
+      "source": "https://github.com/ggml-org/llama.cpp/issues/9289"
+    }
+  ]
+}

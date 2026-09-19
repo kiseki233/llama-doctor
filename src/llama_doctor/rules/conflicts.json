@@ -1,0 +1,54 @@
+{
+  "rules": [
+    {
+      "id": "no-mmap-vs-load-mode",
+      "flags": [
+        "--no-mmap",
+        "--load-mode"
+      ],
+      "severity": "warning",
+      "note": "Do not mix deprecated --no-mmap with --load-mode; the effective behavior depends on argument order.",
+      "source": "https://github.com/ggml-org/llama.cpp/discussions/26469"
+    },
+    {
+      "id": "mmap-vs-load-mode",
+      "flags": [
+        "--mmap",
+        "--load-mode"
+      ],
+      "severity": "warning",
+      "note": "Do not mix deprecated --mmap with --load-mode.",
+      "source": "https://github.com/ggml-org/llama.cpp/issues/9289"
+    },
+    {
+      "id": "mlock-vs-load-mode",
+      "flags": [
+        "--mlock",
+        "--load-mode"
+      ],
+      "severity": "warning",
+      "note": "Do not mix deprecated --mlock with --load-mode.",
+      "source": "https://github.com/ggml-org/llama.cpp/issues/9289"
+    },
+    {
+      "id": "direct-io-vs-load-mode",
+      "flags": [
+        "--direct-io",
+        "--load-mode"
+      ],
+      "severity": "warning",
+      "note": "Do not mix deprecated --direct-io with --load-mode.",
+      "source": "https://github.com/ggml-org/llama.cpp/issues/9289"
+    },
+    {
+      "id": "legacy-no-mmap-plus-mlock",
+      "flags": [
+        "--no-mmap",
+        "--mlock"
+      ],
+      "severity": "warning",
+      "note": "This legacy combination does not have a guaranteed one-to-one --load-mode replacement; review its memory-loading semantics manually.",
+      "source": "https://github.com/ggml-org/llama.cpp/issues/26110"
+    }
+  ]
+}

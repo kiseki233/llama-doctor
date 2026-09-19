@@ -1,0 +1,35 @@
+----- common params -----
+
+-h,    --help, --usage                  print usage and exit
+--version                               show version and build info
+-t,    --threads N                      number of CPU threads to use during generation (default: -1)
+                                        (env: LLAMA_ARG_THREADS)
+-tb,   --threads-batch N                number of threads to use during batch and prompt processing
+-C,    --cpu-mask M                     CPU affinity mask: arbitrarily long hex
+-Cr,   --cpu-range lo-hi                range of CPUs for affinity
+--cpu-strict <0|1>                      use strict CPU placement (default: 0)
+-m,    --model FNAME                    model path
+-ngl,  --n-gpu-layers N                 number of layers to store in VRAM, either an exact number, 'auto', or 'all'
+-fa,   --flash-attn [on|off|auto]        set Flash Attention use
+                                        (env: LLAMA_ARG_FLASH_ATTN)
+-lm,   --load-mode MODE                 model loading mode (default: mmap)
+                                        - none: no special loading mode
+                                        - mmap: memory-map model
+                                        - mlock: keep model in RAM
+                                        - mmap+mlock: mmap and keep model in RAM
+                                        - dio: use DirectIO if available
+                                        (env: LLAMA_ARG_LOAD_MODE)
+-ts,   --tensor-split N0,N1,N2,...      fraction of the model to offload to each GPU
+--mmap                                  legacy mmap control
+--no-mmap                               legacy mmap control
+--mlock                                 legacy mlock control
+--direct-io                             legacy direct I/O control
+--perf, --no-perf                       whether to enable performance timings
+-kvo,   --kv-offload, -nkvo, --no-kv-offload
+                                        whether to enable KV cache offloading
+--rope-scaling {none,linear,yarn}       RoPE frequency scaling method
+--poll <0...100>                        polling level
+-ctk,   --cache-type-k TYPE             KV cache data type for K
+                                        allowed values: f32, f16, bf16, q8_0, q4_0, q4_1, iq4_nl
+-dt,    --defrag-thold N                KV cache defragmentation threshold (DEPRECATED)
+--rope-scale N                          RoPE context scaling factor

@@ -1,0 +1,10 @@
+usage: llama-server [options]
+
+  -m, --model <file>                 model path
+  -c, --ctx-size <n>                 context size
+  -ngl, --n-gpu-layers <n>          number of layers to store in VRAM, either an exact number, 'auto', or 'all'
+      --load-mode <mode>             model load mode
+      --flash-attn                    enable flash attention
+      --threads <n>                  number of threads
+  -fa, --flash-attn [on|off|auto]    set Flash Attention use
+                                      (env: LLAMA_ARG_FLASH_ATTN)
